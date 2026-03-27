@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 const PetListScreen = () => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Lista de Mascotas</Text>
+      <Text>Lista de registros</Text>
     </View>
   );
 };
