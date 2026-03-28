@@ -1,28 +1,55 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import PetListScreen from '../screen/PetListScreen';
-import RegisterPetScreen from '../screen/RegisterPetScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
+import PetListScreen from '../screen/PetListScreen';
+import PetDetailScreen from '../screen/PetDetailsScreen';
+import RegisterPetScreen from '../screen/RegisterPetScreen';
 import TipsScreen from '../screen/TipsScreen';
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+const PetsStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: '#000' },
+        headerTintColor: '#fff',
+      }}
+    >
+      <Stack.Screen
+        name="PetList"
+        component={PetListScreen}
+        options={{ title: 'Mis Mascotas' }}
+      />
+      <Stack.Screen
+        name="PetDetail"
+        component={PetDetailScreen}
+        options={{ title: 'Detalle' }}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const TapNavegation = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: '#000', 
-        tabBarInactiveTintColor: '#555', 
-        tabBarStyle: { height: 60, paddingBottom: 10 }, 
-        headerStyle: { backgroundColor: '#000' }, 
-        headerTintColor: '#fff', 
+        tabBarActiveTintColor: '#000',
+        tabBarInactiveTintColor: '#555',
+        tabBarStyle: { height: 60, paddingBottom: 10 },
+        headerStyle: { backgroundColor: '#000' },
+        headerTintColor: '#fff',
       }}
     >
       <Tab.Screen
         name="Pets"
-        component={PetListScreen}
+        component={PetsStack}
         options={{
-          title: 'Mis mascotas',
+          title: 'Mascotas',
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <MaterialIcons name="pets" size={32} color={color} />
           ),
@@ -39,7 +66,7 @@ const TapNavegation = () => {
         }}
       />
       <Tab.Screen
-        name="Profile"
+        name="Tips"
         component={TipsScreen}
         options={{
           title: 'Consejos',
