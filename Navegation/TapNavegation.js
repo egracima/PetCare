@@ -7,18 +7,14 @@ import PetListScreen from '../screen/PetListScreen';
 import PetDetailScreen from '../screen/PetDetailsScreen';
 import RegisterPetScreen from '../screen/RegisterPetScreen';
 import TipsScreen from '../screen/TipsScreen';
+import { tabNavigatorOptions, stackNavigatorOptions } from '../styles/TapNavegationStyles';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 const PetsStack = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: { backgroundColor: '#000' },
-        headerTintColor: '#fff',
-      }}
-    >
+    <Stack.Navigator screenOptions={stackNavigatorOptions}>
       <Stack.Screen
         name="PetList"
         component={PetListScreen}
@@ -35,15 +31,7 @@ const PetsStack = () => {
 
 const TapNavegation = () => {
   return (
-    <Tab.Navigator
-      screenOptions={{
-        tabBarActiveTintColor: '#000',
-        tabBarInactiveTintColor: '#555',
-        tabBarStyle: { height: 60, paddingBottom: 10 },
-        headerStyle: { backgroundColor: '#000' },
-        headerTintColor: '#fff',
-      }}
-    >
+    <Tab.Navigator screenOptions={tabNavigatorOptions}>
       <Tab.Screen
         name="Pets"
         component={PetsStack}
