@@ -1,6 +1,6 @@
 # PetCare - Gestor de Mascotas
 
-**Nombre del estudiante:** Victor Manuel Florez Taborda - Estefania Graciano Martinez
+**Nombre del estudiante:** - Estefania Graciano Martinez - Victor Manuel Florez Taborda 
 
 **Aplicación:** PetCare
 
