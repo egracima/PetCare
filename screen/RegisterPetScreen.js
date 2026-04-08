@@ -22,6 +22,14 @@ const RegisterPetScreen = () => {
   const [isFormValid, setIsFormValid] = useState(false);
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log('holi uwu');
+    }, 5000);
+
+    return;
+  }, []); 
+  
+  useEffect(() => {
     const valid = name.trim() !== '' &&
       species.trim() !== '' &&
       breed.trim() !== '' &&
